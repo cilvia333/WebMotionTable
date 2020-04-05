@@ -5,11 +5,11 @@ import Layout from '../../components/layout';
 import Image from '../../components/image';
 import SEO from '../../components/seo';
 
-export default function IndexPage() {
+export default function Orbital() {
   return (
     <Layout>
-      <SEO title="01 Orbit" />
-      <h1>Orbit</h1>
+      <SEO title="Orbital" />
+      <h1>Orbital</h1>
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
       <Link to="/content/01/">Go to 01</Link>

@@ -15,7 +15,7 @@ const globalStyle = css`
 `;
 
 type Props = {
-  children: string;
+  children?: string;
 };
 
 export default function Layout({ children }: Props) {
@@ -33,10 +33,9 @@ export default function Layout({ children }: Props) {
     <>
       <Global styles={globalStyle} />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <HeaderMargin>
-        <main>{children}</main>
-        <footer>©2020, Cilvia333 / All rights Reserved.</footer>
-      </HeaderMargin>
+      <HeaderMargin />
+      <main>{children}</main>
+      <footer>©2020, Cilvia333 / All rights Reserved.</footer>
     </>
   );
 }
