@@ -1,35 +1,36 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 
-const header = css({
-  marginBottom: `1.45rem`,
-  backgroundColor: `#ddd`,
-});
+const CustomHeader = styled.header`
+  margin-bottom: 1.45rem;
+  background-color: #ddd;
+`;
 
-const wrapper = css({
-  margin: `0 auto`,
-  padding: `1.45rem 1.0875rem`,
-  display: `flex`,
-  justifyContent: `space-between`,
-});
+const Wrapper = styled.div`
+  margin: 0 auto;
+  padding: 1.45rem 1.0875rem;
+  display: flex;
+  justify-content: space-between;
+`;
 
-const title = css({
-  margin: 0,
-});
+const Title = styled.h1`
+  margin: 0;
+`;
 
-const link = css({
-  color: `white`,
-  textDecoration: `none`,
-});
+const TitileLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+`;
 
-const menu = css({
-  display: `flex`,
-  justifyContent: `space-between`,
+const Menu = styled.ul`
+  display: flex;
+  justify-content: space-between;
   li: {
-    marginLeft: `10px`,
-  },
-});
+    margin-left: 10px;
+  }
+`;
 
 type Props = {
   siteTitle: string;
@@ -37,14 +38,12 @@ type Props = {
 
 function Header({ siteTitle = `` }: Props) {
   return (
-    <header css={header}>
-      <div css={wrapper}>
-        <h1 css={title}>
-          <Link to="/" css={link}>
-            {siteTitle}
-          </Link>
-        </h1>
-        <ul css={menu}>
+    <CustomHeader>
+      <Wrapper>
+        <Title>
+          <TitileLink to="/">{siteTitle}</TitileLink>
+        </Title>
+        <Menu>
           <li>
             <Link to="/">works</Link>
           </li>
@@ -54,9 +53,9 @@ function Header({ siteTitle = `` }: Props) {
           <li>
             <Link to="/contacts">contacts</Link>
           </li>
-        </ul>
-      </div>
-    </header>
+        </Menu>
+      </Wrapper>
+    </CustomHeader>
   );
 }
 
