@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import { css } from '@emotion/core';
 import styled from '@emotion/styled';
+import { Colors } from '../assets/styles/constants';
 
 const CustomHeader = styled.header`
   margin-bottom: 1.45rem;
-  background-color: #ddd;
+  background-color: ${Colors.black};
 `;
 
 const Wrapper = styled.div`
@@ -45,13 +45,13 @@ function Header({ siteTitle = `` }: Props) {
         </Title>
         <Menu>
           <li>
-            <Link to="/">works</Link>
+            <Link to="/about">about</Link>
           </li>
           <li>
-            <Link to="/profile">profile</Link>
+            <Link to="/profile">twitter</Link>
           </li>
           <li>
-            <Link to="/contacts">contacts</Link>
+            <Link to="/contacts">facebook</Link>
           </li>
         </Menu>
       </Wrapper>

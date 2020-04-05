@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
-
+import Card from '../components/card';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Colors } from '../assets/styles/constants';
+import { Orbit } from '../components/contents/orbit';
 
 export default function IndexPage() {
   return (
@@ -15,7 +16,9 @@ export default function IndexPage() {
           <tbody>
             <tr>
               <Item>
-                <Link to="/content/01/">Orbital</Link>
+                <Card name="Orbit" link="orbit">
+                  <Orbit />
+                </Card>
               </Item>
               <Item colSpan={16} />
               <Item>FractalNoise</Item>
@@ -81,15 +84,16 @@ export default function IndexPage() {
 }
 
 const Wrapper = styled.div`
-  padding: 10px;
-  background-color: ${Colors.black};
+  padding: 50px;
 `;
 
 const Table = styled.table`
+  width: 100%;
   border: 1px solid ${Colors.white};
   border-collapse: collapse;
   empty-cells: hide;
   width: 100%;
+  table-layout: fixed;
 `;
 
 const Item = styled.td`
@@ -98,4 +102,5 @@ const Item = styled.td`
   border: 1px solid ${Colors.white};
   text-align: center;
   height: 50px;
+  overflow-wrap: break-word;
 `;
