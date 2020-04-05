@@ -14,6 +14,10 @@ const globalStyle = css`
   ul {
     list-style: none;
   }
+  a {
+    text-decoration: none;
+    color: ${Colors.white};
+  }
 `;
 
 type Props = {

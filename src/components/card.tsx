@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
-import { Colors } from '../assets/styles/constants';
+import { Colors, Fonts } from '../assets/styles/constants';
 
 type Props = {
   name: string;
@@ -35,7 +35,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 20px;
+  ${Fonts.h3}
   color: ${Colors.white};
   margin-bottom: 10px;
 `;

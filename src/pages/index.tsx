@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import Card from '../components/card';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Colors } from '../assets/styles/constants';
 import { Orbit } from '../components/contents/orbit';
+import { StayTune } from '../components/contents/stayTune';
 
 export default function IndexPage() {
   return (
@@ -20,21 +20,103 @@ export default function IndexPage() {
                   <Orbit />
                 </Card>
               </Item>
-              <Item colSpan={16} />
-              <Item>FractalNoise</Item>
+              <HiddenItem colSpan={16} />
+              <Item>
+                <Card name="FractalNoise" link="">
+                  <StayTune />
+                </Card>
+              </Item>
             </tr>
             <tr>
-              <Item>Offset</Item>
-              <Item>LineWeight</Item>
-              <Item colSpan={10} />
-              <Item>FractalNoise</Item>
+              <Item>
+                <Card name="Offset" link="">
+                  <StayTune />
+                </Card>
+              </Item>
+              <Item>
+                <Card name="LineWeight" link="">
+                  <StayTune />
+                </Card>
+              </Item>
+              <HiddenItem colSpan={10} />
+              <Item>
+                <Card name="LineWeight" link="">
+                  <StayTune />
+                </Card>
+              </Item>
+              <Item>
+                <Card name="Easing" link="">
+                  <StayTune />
+                </Card>
+              </Item>
+              <Item>
+                <Card name="Easing" link="">
+                  <StayTune />
+                </Card>
+              </Item>
+              <Item>
+                <Card name="Easing" link="">
+                  <StayTune />
+                </Card>
+              </Item>
+              <Item>
+                <Card name="Easing" link="">
+                  <StayTune />
+                </Card>
+              </Item>
+              <Item>
+                <Card name="Easing" link="">
+                  <StayTune />
+                </Card>
+              </Item>
             </tr>
             <tr>
-              <Item>Vegas</Item>
-              <Item>ShapeTransform</Item>
-              <Item>Easing</Item>
-              <Item colSpan={9} />
-              <Item>FractalNoise</Item>
+              <Item>
+                <Card name="Vegas" link="">
+                  <StayTune />
+                </Card>
+              </Item>
+              <Item>
+                <Card name="ShapeTransform" link="">
+                  <StayTune />
+                </Card>
+              </Item>
+              <Item>
+                <Card name="Easing" link="">
+                  <StayTune />
+                </Card>
+              </Item>
+              <HiddenItem colSpan={9} />
+              <Item>
+                <Card name="Easing" link="">
+                  <StayTune />
+                </Card>
+              </Item>
+              <Item>
+                <Card name="Easing" link="">
+                  <StayTune />
+                </Card>
+              </Item>
+              <Item>
+                <Card name="Easing" link="">
+                  <StayTune />
+                </Card>
+              </Item>
+              <Item>
+                <Card name="Easing" link="">
+                  <StayTune />
+                </Card>
+              </Item>
+              <Item>
+                <Card name="Easing" link="">
+                  <StayTune />
+                </Card>
+              </Item>
+              <Item>
+                <Card name="Easing" link="">
+                  <StayTune />
+                </Card>
+              </Item>
             </tr>
             <tr>
               <Item>Loop</Item>
@@ -103,4 +185,8 @@ const Item = styled.td`
   text-align: center;
   height: 50px;
   overflow-wrap: break-word;
+`;
+
+const HiddenItem = styled(Item)`
+  border: hidden;
 `;
