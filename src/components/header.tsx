@@ -11,9 +11,9 @@ export default function Header({ siteTitle = `` }: Props) {
   return (
     <CustomHeader>
       <Wrapper>
-        <TitileLink to="/">
+        <TitleLink to="/">
           <Title>{siteTitle}</Title>
-        </TitileLink>
+        </TitleLink>
         <Menu>
           <li>
             <Link to="/about">about</Link>
@@ -46,7 +46,7 @@ const Title = styled.h1`
   ${Fonts.h1}
 `;
 
-const TitileLink = styled(Link)`
+const TitleLink = styled(Link)`
   font-size: 32px;
 `;
 

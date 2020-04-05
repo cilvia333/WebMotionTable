@@ -21,7 +21,7 @@ const globalStyle = css`
 `;
 
 type Props = {
-  children?: string;
+  children?: JSX.Element[];
 };
 
 export default function Layout({ children }: Props) {

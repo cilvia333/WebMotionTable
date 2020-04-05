@@ -26,7 +26,7 @@ const Text = styled.div`
   height: ${size};
   width: ${size};
   ${Fonts.h3}
-  color: ${Colors.white}
+  color: ${Colors.white};
   text-align: center;
   border-radius: 50%;
   border: 1px solid ${Colors.white};
