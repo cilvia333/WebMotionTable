@@ -14,8 +14,8 @@ export default function Card({ name, link, children }: Props) {
     <>
       <CardLink to={`/content/${link}/`}>
         <Wrapper>
-          <Title>{name}</Title>
           {children}
+          <Title>{name}</Title>
         </Wrapper>
       </CardLink>
     </>
@@ -27,15 +27,19 @@ const CardLink = styled(Link)`
 `;
 
 const Wrapper = styled.div`
-  padding: 10px 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  background-color: ${Colors.gray};
+  height: 100%;
+  width: 100%;
 `;
 
 const Title = styled.div`
-  ${Fonts.h3}
+  ${Fonts.text}
+  font-weight: 500;
   color: ${Colors.white};
-  margin-bottom: 10px;
+  vertical-align: middle;
+  height: 30px;
 `;

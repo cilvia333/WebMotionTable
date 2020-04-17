@@ -14,5 +14,5 @@
     "resolveJsonModule": true,
     "typeRoots": ["src/types/"]
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "gatsby-browser.js","gatsby-config.js","gatsby-node.js","gatsby-ssr.js"],
 }

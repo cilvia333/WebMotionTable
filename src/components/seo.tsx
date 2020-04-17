@@ -39,6 +39,10 @@ function SEO({ description = ``, lang = `jp`, meta = [], title }: Props) {
           content: metaDescription,
         },
         {
+          name: `viewport`,
+          content: `width=device-width,initial-scale=1.0,minimum-scale=1.0`,
+        },
+        {
           property: `og:title`,
           content: title,
         },

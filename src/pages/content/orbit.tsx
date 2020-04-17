@@ -14,17 +14,24 @@ export default function OrbitPage() {
   return (
     <Layout>
       <SEO title="Orbit" />
-      <h1>Orbit</h1>
-      <p>
-        オブジェクトを軌道上で回転させるモーション。
-        良く使われるモーションのうちの1つ。
-        オブジェクトの中心で回転するのではなく、基点をずらして回転させることによって得られるモーション。
-      </p>
-      <Orbit />
-      <AdvancedOrbit1 />
-      <AdvancedOrbit2 />
-      <AdvancedOrbit3 />
-      <Link to="/">Go to 01</Link>
+      <Wrapper>
+        <h1>Orbit</h1>
+        <p>
+          オブジェクトを軌道上で回転させるモーション。
+          良く使われるモーションのうちの1つ。
+          オブジェクトの中心で回転するのではなく、基点をずらして回転させることによって得られるモーション。
+        </p>
+        <Orbit size={200} isAnimation={true} />
+        <TopLink to="/">Go to 01</TopLink>
+      </Wrapper>
     </Layout>
   );
 }
+
+const Wrapper = styled.div`
+  padding: 100px;
+`;
+
+const TopLink = styled(Link)`
+  padding-top: 40px;
+`;

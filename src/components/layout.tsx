@@ -3,13 +3,17 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Global, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import Header from './header';
-import { Colors } from '../assets/styles/constants';
+import { Colors, Fonts } from '../assets/styles/constants';
 
 const globalStyle = css`
   body {
     margin: 0;
     padding: 0;
     background-color: ${Colors.black};
+    box-sizing: border-box;
+    font-family: 'Avenir Next', 'Helvetica neue', Helvetica, 'Noto Sans JP',
+      '游ゴシック', YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',
+      メイリオ, Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
   }
   ul {
     list-style: none;
@@ -52,10 +56,17 @@ const HeaderMargin = styled.div`
 `;
 
 const Main = styled.main`
-  height: 100%;
+  height: calc(100vh - 130px);
 `;
 
 const Footer = styled.footer`
   text-align: center;
   color: ${Colors.white};
+  ${Fonts.h4}
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 `;

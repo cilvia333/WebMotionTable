@@ -11,18 +11,26 @@ export default function Header({ siteTitle = `` }: Props) {
   return (
     <CustomHeader>
       <Wrapper>
-        <TitleLink to="/">
-          <Title>{siteTitle}</Title>
-        </TitleLink>
+        <TitleWrapper>
+          <TitleLink to="/">
+            <Title>{siteTitle}</Title>
+          </TitleLink>
+          <TitleText>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
+            vitae porta parturient purus nunc, <br />
+            Venenatis quam dui dictum consequat. Volutpat lectus ut diam lectus
+            molestie ut vitae.
+          </TitleText>
+        </TitleWrapper>
         <Menu>
           <li>
-            <Link to="/about">about</Link>
+            <MenuLink to="/about">about</MenuLink>
           </li>
           <li>
-            <Link to="/profile">twitter</Link>
+            <MenuLink to="/profile">twitter</MenuLink>
           </li>
           <li>
-            <Link to="/contacts">facebook</Link>
+            <MenuLink to="/contacts">facebook</MenuLink>
           </li>
         </Menu>
       </Wrapper>
@@ -31,31 +39,48 @@ export default function Header({ siteTitle = `` }: Props) {
 }
 
 const CustomHeader = styled.header`
-  margin-bottom: 1.45rem;
-  background-color: ${Colors.black};
+  margin-bottom: 16px;
+  background-color: ${Colors.white};
 `;
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  padding: 1.45rem 1.0875rem;
+  padding: 0 16px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+`;
+
+const TitleWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 const Title = styled.h1`
-  ${Fonts.h1}
+  ${Fonts.h2}
+  color: ${Colors.black};
 `;
 
 const TitleLink = styled(Link)`
-  font-size: 32px;
+  font-size: 24px;
+`;
+
+const TitleText = styled.p`
+  ${Fonts.cap}
+  color: ${Colors.black};
+  margin-left: 16px;
 `;
 
 const Menu = styled.ul`
   display: flex;
   justify-content: space-between;
   li {
-    color: ${Colors.white};
-    ${Fonts.text}
     margin-left: 10px;
   }
+`;
+
+const MenuLink = styled(Link)`
+  color: ${Colors.black};
+  ${Fonts.h3}
 `;
