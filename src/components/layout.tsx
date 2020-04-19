@@ -10,10 +10,14 @@ const globalStyle = css`
     margin: 0;
     padding: 0;
     background-color: ${Colors.black};
-    box-sizing: border-box;
+
     font-family: 'Avenir Next', 'Helvetica neue', Helvetica, 'Noto Sans JP',
       '游ゴシック', YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',
       メイリオ, Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+
+    & * {
+      box-sizing: border-box;
+    }
   }
   ul {
     list-style: none;

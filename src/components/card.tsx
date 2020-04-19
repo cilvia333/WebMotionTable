@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { Colors, Fonts } from '../assets/styles/constants';
@@ -6,15 +7,25 @@ import { Colors, Fonts } from '../assets/styles/constants';
 type Props = {
   name: string;
   link: string;
-  children: React.ReactNode;
+  size: number;
+  logo: JSX.Element;
 };
 
-export default function Card({ name, link, children }: Props) {
+export default function Card({ name, link, size, logo }: Props) {
+  const [isMouseOver, setIsMouseOver] = useState(false);
+  const logoWithProps = React.cloneElement(logo, {
+    size: size,
+    isAnimation: isMouseOver,
+  });
   return (
     <>
-      <CardLink to={`/content/${link}/`}>
+      <CardLink
+        to={`/content/${link}/`}
+        onMouseOver={e => setIsMouseOver(true)}
+        onMouseOut={e => setIsMouseOver(false)}
+      >
         <Wrapper>
-          {children}
+          {logoWithProps}
           <Title>{name}</Title>
         </Wrapper>
       </CardLink>

@@ -6,33 +6,41 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Colors } from '../assets/styles/constants';
 import { Orbit } from '../components/contents/orbit';
+import { Offset } from '../components/contents/offset';
+import { LineWeight } from '../components/contents/lineWeight';
 
-const mock = [
+type CardItem = {
+  name: string;
+  link: string;
+  component: JSX.Element;
+};
+
+const mock: CardItem[][] = [
   [
-    { name: 'Orbit', link: 'orbit', component: Orbit },
-    { name: 'Orbit', link: 'orbit', component: Orbit },
-    { name: 'Orbit', link: 'orbit', component: Orbit },
-    { name: 'Orbit', link: 'orbit', component: Orbit },
-    { name: 'Orbit', link: 'orbit', component: Orbit },
-    { name: 'Orbit', link: 'orbit', component: Orbit },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Offset', link: 'offset', component: <Offset /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
   ],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
-  [{ name: 'Orbit', link: 'orbit', component: Orbit }],
+  [{ name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> }],
+  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
+  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
+  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
+  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
+  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
+  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
+  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
+  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
+  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
+  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
+  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
+  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
+  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
+  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
+  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
+  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
 ];
 
 export default function IndexPage() {
@@ -50,9 +58,13 @@ export default function IndexPage() {
         {mock.map((items, i) => (
           <CardWrapper key={`group${i}`}>
             {items.map((item, j) => (
-              <Card name={item.name} link={item.link} key={`item${i}_${j}`}>
-                <Orbit size={logoSize} isAnimation={true} />
-              </Card>
+              <Card
+                name={item.name}
+                link={item.link}
+                key={`item${i}_${j}`}
+                size={logoSize}
+                logo={item.component}
+              />
             ))}
           </CardWrapper>
         ))}
@@ -63,16 +75,16 @@ export default function IndexPage() {
 
 const Wrapper = styled.div`
   padding: 0 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
   height: 100%;
+  column-gap: 5px;
 `;
 
 const CardWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
   height: 100%;
+  gap: 10px;
+  align-content: end;
 `;

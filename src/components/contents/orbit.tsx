@@ -4,8 +4,8 @@ import styled from '@emotion/styled';
 import { Colors } from '../../assets/styles/constants';
 
 type Prop = {
-  size: number;
-  isAnimation: boolean;
+  size?: number;
+  isAnimation?: boolean;
 };
 
 export function Orbit({ size, isAnimation }: Prop) {
@@ -101,11 +101,14 @@ const orbitRotate = keyframes`
   0% {
    transform: rotate(-45deg);
   }
-  33% {
+  10% {
    transform: rotate(-45deg);
   }
-  100% {
+  70% {
     transform: rotate(315deg);
+  }
+  100% {
+   transform: rotate(315deg);
   }
 `;
 
@@ -159,6 +162,7 @@ const Fan = styled.div<{
   bottom: 0;
   margin: auto;
   display: block;
+  transform: rotate(-45deg);
 
   ${({ duration, isAnimation }) =>
     isAnimation &&
@@ -196,7 +200,7 @@ const FanInner = styled.div<{ size: number }>`
   margin: auto;
   border-radius: 50%;
   box-sizing: border-box;
-  border: 2px solid ${Colors.white};
+  border: 3px solid ${Colors.white};
 `;
 
 const FanLeft = styled(Fan)`
@@ -224,6 +228,7 @@ const OrbitalBox = styled.div<{ duration: number; isAnimation: boolean }>`
   left: 25%;
   top: -25%;
   transform-origin: center 150%;
+  transform: rotate(-45deg);
   ${({ duration, isAnimation }) =>
     isAnimation &&
     css`
