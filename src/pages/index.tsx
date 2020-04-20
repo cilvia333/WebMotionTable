@@ -4,10 +4,12 @@ import styled from '@emotion/styled';
 import Card from '../components/card';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { Colors } from '../assets/styles/constants';
+import { Colors, Fonts } from '../assets/styles/constants';
 import { Orbit } from '../components/contents/orbit';
 import { Offset } from '../components/contents/offset';
 import { LineWeight } from '../components/contents/lineWeight';
+import { Blur } from '../components/contents/blur';
+import { Move } from '../components/contents/move';
 
 type CardItem = {
   name: string;
@@ -83,14 +85,14 @@ const mock: CardItem[][] = [
     { name: 'Orbit', link: 'orbit', component: <Orbit /> },
   ],
   [
-    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Blur', link: 'blur', component: <Blur /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
   ],
   [
-    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Move', link: 'move', component: <Move /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
@@ -129,10 +131,10 @@ const mock: CardItem[][] = [
 
 export default function IndexPage() {
   const [logoSize, setLogoSize] = useState(
-    (document.documentElement.clientWidth - 550) / 18
+    (document.documentElement.clientWidth - 1000) / 18
   );
   useEffect(() => {
-    setLogoSize((document.documentElement.clientWidth - 550) / 18);
+    setLogoSize((document.documentElement.clientWidth - 1000) / 18);
   }, [document.documentElement.clientWidth]);
 
   return (
@@ -150,6 +152,7 @@ export default function IndexPage() {
                 logo={item.component}
               />
             ))}
+            <GroupButton>Group01</GroupButton>
           </CardWrapper>
         ))}
       </Wrapper>
@@ -158,36 +161,44 @@ export default function IndexPage() {
 }
 
 const Wrapper = styled.div`
-  padding: 0 16px;
+  padding: 48px 48px;
   display: grid;
   grid-template-columns: repeat(18, 1fr);
   height: 100%;
-  column-gap: 5px;
+  column-gap: 10px;
 `;
 
 const CardWrapper = styled.div`
   display: grid;
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr) 10px;
   height: 100%;
   gap: 10px;
   align-content: end;
 
-  *:nth-child(1) {
+  a:nth-of-type(1) {
     grid-row: 6/7;
   }
-  *:nth-child(2) {
+  a:nth-of-type(2) {
     grid-row: 5/6;
   }
-  *:nth-child(3) {
+  a:nth-of-type(3) {
     grid-row: 4/5;
   }
-  *:nth-child(4) {
+  a:nth-of-type(4) {
     grid-row: 3/4;
   }
-  *:nth-child(5) {
+  a:nth-of-type(5) {
     grid-row: 2/3;
   }
-  *:nth-child(6) {
+  a:nth-of-type(6) {
     grid-row: 1/2;
   }
+`;
+
+const GroupButton = styled.div`
+  ${Fonts.h3}
+  color: ${Colors.gray};
+  text-align: center;
+  grid-row: 7/8;
+  cursor: pointer;
 `;
