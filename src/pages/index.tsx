@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+import { useWindowSize } from 'react-use';
 import styled from '@emotion/styled';
 import Card from '../components/card';
 import Layout from '../components/layout';
@@ -130,12 +131,11 @@ const mock: CardItem[][] = [
 ];
 
 export default function IndexPage() {
-  const [logoSize, setLogoSize] = useState(
-    (document.documentElement.clientWidth - 1000) / 18
-  );
+  const { width: windowWidth } = useWindowSize();
+  const [logoSize, setLogoSize] = useState(0);
   useEffect(() => {
-    setLogoSize((document.documentElement.clientWidth - 1000) / 18);
-  }, [document.documentElement.clientWidth]);
+    setLogoSize((windowWidth - 1000) / 18);
+  }, [windowWidth]);
 
   return (
     <Layout>
