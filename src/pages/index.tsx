@@ -24,23 +24,107 @@ const mock: CardItem[][] = [
     { name: 'Orbit', link: 'orbit', component: <Orbit /> },
     { name: 'Orbit', link: 'orbit', component: <Orbit /> },
   ],
-  [{ name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> }],
-  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
-  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
-  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
-  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
-  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
-  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
-  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
-  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
-  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
-  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
-  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
-  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
-  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
-  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
-  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
-  [{ name: 'Orbit', link: 'orbit', component: <Orbit /> }],
+  [
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+  ],
+  [
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+  ],
+  [
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+  ],
+  [
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+  ],
+  [
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+  ],
+  [
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+  ],
+  [
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+  ],
+  [
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+  ],
+  [
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+  ],
+  [
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+  ],
+  [
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+  ],
+  [
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+  ],
+  [
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+  ],
+  [
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+  ],
+  [
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+  ],
+  [
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+  ],
+  [
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Offset', link: 'offset', component: <Offset /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+  ],
 ];
 
 export default function IndexPage() {
@@ -57,7 +141,7 @@ export default function IndexPage() {
       <Wrapper>
         {mock.map((items, i) => (
           <CardWrapper key={`group${i}`}>
-            {items.map((item, j) => (
+            {items.reverse().map((item, j) => (
               <Card
                 name={item.name}
                 link={item.link}
@@ -87,4 +171,23 @@ const CardWrapper = styled.div`
   height: 100%;
   gap: 10px;
   align-content: end;
+
+  *:nth-child(1) {
+    grid-row: 6/7;
+  }
+  *:nth-child(2) {
+    grid-row: 5/6;
+  }
+  *:nth-child(3) {
+    grid-row: 4/5;
+  }
+  *:nth-child(4) {
+    grid-row: 3/4;
+  }
+  *:nth-child(5) {
+    grid-row: 2/3;
+  }
+  *:nth-child(6) {
+    grid-row: 1/2;
+  }
 `;
