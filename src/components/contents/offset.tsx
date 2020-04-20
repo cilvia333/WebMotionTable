@@ -1,4 +1,6 @@
+import anime from 'animejs';
 import React from 'react';
+import { useEffect } from 'react';
 import { css, keyframes } from '@emotion/core';
 import styled from '@emotion/styled';
 import { Colors } from '../../assets/styles/constants';
@@ -8,18 +10,41 @@ type Prop = {
   isAnimation?: boolean;
 };
 
+const svgTriangle = () => (
+  <svg height="100%" width="100%">
+    <polygon points="250,60 100,400 400,400" className="triangle" />
+  </svg>
+);
+
 export function Offset({ size, isAnimation }: Prop) {
+  const svgTriangleRef = React.useRef(null);
+  const triangleRef = React.createRef<HTMLDivElement>();
+  const path = anime.path(svgTriangleRef);
+  let timeline: anime.AnimeTimelineInstance;
+  useEffect(() => {
+    if (isAnimation) {
+      timeline = anime
+        .timeline({
+          targets: triangleRef.current,
+          autoplay: false,
+        })
+        .add({
+          translateX: path('x'),
+          translateY: path('y'),
+          rotate: path('angle'),
+        });
+    }
+  }, [isAnimation]);
+  useEffect(() => {
+    if (isAnimation) timeline.play();
+  }, [isAnimation]);
   return (
     <>
       <Wrapper>
         <Triangle size={size ?? 10}>
-          <Fan size={size} duration={2} isAnimation={isAnimation ?? false}>
-            <FanOuter>
-              <FanBottomInner />
-              <FanRightInner />
-              <FanLeftInner />
-            </FanOuter>
-          </Fan>
+          <svg height="100%" width="100%">
+            <polygon points="250,60 100,400 400,400" className="triangle" />
+          </svg>
         </Triangle>
       </Wrapper>
     </>
@@ -93,44 +118,8 @@ const Fan = styled.div<{
   margin: auto;
   display: block;
   transform: rotate(-45deg);
-  //clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-
-  ${({ duration, isAnimation }) =>
-    isAnimation &&
-    css`
-      animation: ${orbitRotate} ${duration}s cubic-bezier(0, 0.47, 0.43, 1)
-        infinite;
-    `}
 `;
 
-const FanOuter = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  transform: rotate(45deg);
-`;
-
-const FanInner = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  border-bottom: 3px solid ${Colors.white};
-`;
-
-const FanBottomInner = styled(FanInner)`
-  transform: rotate(0deg);
-`;
-
-const FanLeftInner = styled(FanInner)`
-  transform: rotate(120deg);
-`;
-
-const FanRightInner = styled(FanInner)`
-  transform: rotate(-120deg);
+const FanTriangle = styled(svgTriangle)`
+  stroke: 2px solid ${Colors.white};
 `;
