@@ -83,7 +83,6 @@ const LineWrapper = styled.div<{ size: number }>`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
 `;
 
 const Line = styled.div<{
@@ -93,7 +92,7 @@ const Line = styled.div<{
 }>`
   ${({ size }) =>
     css`
-      width: ${(size / 5) * 4}px;
+      width: ${size}px;
     `}
   background: ${Colors.white};
   transform: translateY(0) scaleY(1);

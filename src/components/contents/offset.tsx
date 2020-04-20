@@ -134,35 +134,3 @@ const FanLeftInner = styled(FanInner)`
 const FanRightInner = styled(FanInner)`
   transform: rotate(-120deg);
 `;
-
-const OrbitalBox = styled.div<{ duration: number; isAnimation: boolean }>`
-  width: 50%;
-  height: 50%;
-  position: absolute;
-  left: 25%;
-  top: -25%;
-  transform-origin: center 150%;
-  transform: rotate(-45deg);
-  ${({ duration, isAnimation }) =>
-    isAnimation &&
-    css`
-      animation: ${orbitRotate} ${duration}s cubic-bezier(0, 0.47, 0.43, 1)
-        infinite;
-    `}
-`;
-
-const OrbitalPoint = styled.div<{ size: number }>`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  border-radius: 50%;
-  background-color: ${Colors.white};
-  ${({ size }) =>
-    css`
-      height: ${size / 5}px;
-      width: ${size / 5}px;
-    `}
-`;
