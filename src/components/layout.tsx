@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Global, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import Header from './header';
+import Footer from './footer';
 import { Colors, Fonts } from '../assets/styles/constants';
 
 const globalStyle = css`
@@ -61,16 +62,4 @@ const HeaderMargin = styled.div`
 
 const Main = styled.main`
   height: calc(100vh - 130px);
-`;
-
-const Footer = styled.footer`
-  text-align: center;
-  color: ${Colors.white};
-  ${Fonts.h4}
-  height: 40px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
 `;
