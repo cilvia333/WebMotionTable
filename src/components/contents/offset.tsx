@@ -10,59 +10,47 @@ type Prop = {
   isAnimation?: boolean;
 };
 
-const svgTriangle = () => (
-  <svg height="100%" width="100%">
-    <polygon points="250,60 100,400 400,400" className="triangle" />
-  </svg>
+type svgProp = {
+  isAnimation: boolean;
+};
+
+const SvgTriangle = ({ isAnimation }: svgProp) => (
+  <SvgWrapper>
+    <StyledSvg
+      height={`400px`}
+      width={`400px`}
+      viewBox="0 0 400 400"
+      isAnimation={isAnimation}
+    >
+      <polygon points="200,80 40,360 360,360" className="triangle" />
+    </StyledSvg>
+  </SvgWrapper>
 );
 
 export function Offset({ size, isAnimation }: Prop) {
-  const svgTriangleRef = React.useRef(null);
-  const triangleRef = React.createRef<HTMLDivElement>();
-  const path = anime.path(svgTriangleRef);
-  let timeline: anime.AnimeTimelineInstance;
-  useEffect(() => {
-    if (isAnimation) {
-      timeline = anime
-        .timeline({
-          targets: triangleRef.current,
-          autoplay: false,
-        })
-        .add({
-          translateX: path('x'),
-          translateY: path('y'),
-          rotate: path('angle'),
-        });
-    }
-  }, [isAnimation]);
-  useEffect(() => {
-    if (isAnimation) timeline.play();
-  }, [isAnimation]);
   return (
     <>
       <Wrapper>
         <Triangle size={size ?? 10}>
-          <svg height="100%" width="100%">
-            <polygon points="250,60 100,400 400,400" className="triangle" />
-          </svg>
+          <SvgTriangle isAnimation={isAnimation ?? false} />
         </Triangle>
       </Wrapper>
     </>
   );
 }
 
-const orbitRotate = keyframes`
+const offsetRotate = keyframes`
   0% {
-   transform: rotate(-45deg);
+    stroke-dashoffset: 40;
   }
-  10% {
-   transform: rotate(-45deg);
+  20% {
+    stroke-dashoffset: 40;
   }
   70% {
-    transform: rotate(315deg);
+    stroke-dashoffset: -600;
   }
   100% {
-   transform: rotate(315deg);
+    stroke-dashoffset: -600;
   }
 `;
 
@@ -89,37 +77,46 @@ const Triangle = styled.div<{ size: number }>`
     margin: auto;
     width: 0;
     height: 0;
+    margin-top: 20px;
 
     ${({ size }) =>
       css`
-        border-right: ${(size / 10) * 3}px solid transparent;
-        border-bottom: ${(size / 5) * 0.85 * 3}px solid ${Colors.white};
-        border-left: ${(size / 10) * 3}px solid transparent;
-        margin-top: ${size / 5}px;
+        border-right: ${(size / 10) * 2}px solid transparent;
+        border-bottom: ${(size / 5) * 0.85 * 2}px solid ${Colors.white};
+        border-left: ${(size / 10) * 2}px solid transparent;
       `}
   }
 `;
 
-const Fan = styled.div<{
-  size: number;
-  duration: number;
-  isAnimation: boolean;
-}>`
-  ${({ size }) =>
-    css`
-      height: ${size}px;
-      width: ${size}px;
-    `}
+const SvgWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
-  display: block;
-  transform: rotate(-45deg);
+  height: 100%;
+  width: 100%;
 `;
+const StyledSvg = styled.svg<{ isAnimation: boolean }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  stroke: ${Colors.white};
+  stroke-width: 30px;
+  stroke-linecap: round;
+  stroke-dasharray: 250 70;
+  stroke-dashoffset: 40;
+  fill: transparent;
 
-const FanTriangle = styled(svgTriangle)`
-  stroke: 2px solid ${Colors.white};
+  ${({ isAnimation }) =>
+    isAnimation &&
+    css`
+      animation: ${offsetRotate} 1.3s cubic-bezier(0, 0.81, 0.38, 0.99) infinite;
+    `}
 `;

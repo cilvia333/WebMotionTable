@@ -133,7 +133,7 @@ const CardLink = styled(Link)`
 `;
 
 const Wrapper = styled.div`
-  /* background-color: ${Colors.gray}; */
+  background-color: ${Colors.gray};
   height: 100%;
   width: 100%;
   position: relative;
