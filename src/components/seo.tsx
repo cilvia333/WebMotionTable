@@ -3,10 +3,10 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 type Props = {
-  description: string;
-  lang: string;
-  meta: { [key: string]: string }[];
-  title: string;
+  description?: string;
+  lang?: string;
+  meta?: { [key: string]: string }[];
+  title?: string;
 };
 
 function SEO({ description = ``, lang = `jp`, meta = [], title }: Props) {
@@ -37,6 +37,10 @@ function SEO({ description = ``, lang = `jp`, meta = [], title }: Props) {
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          name: `viewport`,
+          content: `width=device-width,initial-scale=1.0,minimum-scale=1.0`,
         },
         {
           property: `og:title`,
