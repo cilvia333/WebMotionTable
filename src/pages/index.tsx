@@ -10,7 +10,10 @@ import { Orbit } from '../components/contents/orbit';
 import { Offset } from '../components/contents/offset';
 import { LineWeight } from '../components/contents/lineWeight';
 import { Blur } from '../components/contents/blur';
+import { DoF } from '../components/contents/dof';
+import { FractalNoise } from '../components/contents/fractalNoise';
 import { Move } from '../components/contents/move';
+import { TurbulentDisplace } from '../components/contents/turbulentDisplace';
 
 type CardItem = {
   name: string;
@@ -87,7 +90,7 @@ const mock: CardItem[][] = [
   ],
   [
     { name: 'Blur', link: 'blur', component: <Blur /> },
-    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Depth of Field', link: 'dof', component: <DoF /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
@@ -121,9 +124,17 @@ const mock: CardItem[][] = [
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
   ],
   [
+    {
+      name: 'Fractal Noise',
+      link: 'fractalNoise',
+      component: <FractalNoise />,
+    },
     { name: 'Orbit', link: 'orbit', component: <Orbit /> },
-    { name: 'Offset', link: 'offset', component: <Offset /> },
-    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    {
+      name: 'Turbulent Displace',
+      link: 'turbulentDisplace',
+      component: <TurbulentDisplace />,
+    },
     { name: 'Orbit', link: 'orbit', component: <Orbit /> },
     { name: 'Orbit', link: 'orbit', component: <Orbit /> },
     { name: 'Orbit', link: 'orbit', component: <Orbit /> },
