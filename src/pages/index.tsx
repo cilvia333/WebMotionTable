@@ -154,15 +154,18 @@ export default function IndexPage() {
       <Wrapper>
         {mock.map((items, i) => (
           <CardWrapper key={`group${i}`}>
-            {items.reverse().map((item, j) => (
-              <Card
-                name={item.name}
-                link={item.link}
-                key={`item${i}_${j}`}
-                size={logoSize}
-                logo={item.component}
-              />
-            ))}
+            {items
+              .slice()
+              .reverse()
+              .map((item, j) => (
+                <Card
+                  name={item.name}
+                  link={item.link}
+                  key={`item${i}_${j}`}
+                  size={logoSize}
+                  logo={item.component}
+                />
+              ))}
             <GroupButton>Group01</GroupButton>
           </CardWrapper>
         ))}
