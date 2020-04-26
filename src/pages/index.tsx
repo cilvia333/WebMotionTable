@@ -14,6 +14,9 @@ import { DoF } from '../components/contents/dof';
 import { FractalNoise } from '../components/contents/fractalNoise';
 import { Move } from '../components/contents/move';
 import { Rotate } from '../components/contents/rotate';
+import { RoughEdge } from '../components/contents/roughEdge';
+import { Scale } from '../components/contents/scale';
+import { TrimLine } from '../components/contents/trimLine';
 import { TurbulentDisplace } from '../components/contents/turbulentDisplace';
 
 type CardItem = {
@@ -111,14 +114,14 @@ const mock: CardItem[][] = [
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
   ],
   [
-    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Scale', link: 'scale', component: <Scale /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
   ],
   [
-    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Trim Line', link: 'trimLine', component: <TrimLine /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
@@ -130,7 +133,7 @@ const mock: CardItem[][] = [
       link: 'fractalNoise',
       component: <FractalNoise />,
     },
-    { name: 'Orbit', link: 'orbit', component: <Orbit /> },
+    { name: 'Rough Edge', link: 'roughEdge', component: <RoughEdge /> },
     {
       name: 'Turbulent Displace',
       link: 'turbulentDisplace',
