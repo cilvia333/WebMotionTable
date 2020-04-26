@@ -13,6 +13,7 @@ import { Blur } from '../components/contents/blur';
 import { DoF } from '../components/contents/dof';
 import { FractalNoise } from '../components/contents/fractalNoise';
 import { Move } from '../components/contents/move';
+import { Rotate } from '../components/contents/rotate';
 import { TurbulentDisplace } from '../components/contents/turbulentDisplace';
 
 type CardItem = {
@@ -103,7 +104,7 @@ const mock: CardItem[][] = [
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
   ],
   [
-    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Rotate', link: 'rotate', component: <Rotate /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
