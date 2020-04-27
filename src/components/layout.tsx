@@ -62,4 +62,6 @@ const HeaderMargin = styled.div`
 
 const Main = styled.main`
   height: calc(100vh - 130px);
+  position: relative;
+  z-index: -1;
 `;

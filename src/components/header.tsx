@@ -41,6 +41,7 @@ export default function Header({ siteTitle = `` }: Props) {
 const CustomHeader = styled.header`
   margin-bottom: 16px;
   background-color: ${Colors.white};
+  z-index: 4;
 `;
 
 const Wrapper = styled.div`
