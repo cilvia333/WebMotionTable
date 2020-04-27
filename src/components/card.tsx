@@ -148,14 +148,18 @@ const ContentWrapper = styled.div`
   width: 100%;
   position: relative;
   overflow: hidden;
+  padding-bottom: 5px;
 `;
 
 const Title = styled.div`
+  display: inline;
   ${Fonts.text}
   font-weight: 500;
   color: ${Colors.white};
   vertical-align: middle;
-  height: 30px;
+  text-align: center;
+  line-height: 100%;
+  width: 90%;
 `;
 
 const Canvas = styled.canvas`

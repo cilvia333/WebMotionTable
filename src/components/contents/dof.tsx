@@ -71,8 +71,8 @@ const Square = styled.div<{
 }>`
   ${({ size }) =>
     css`
-      height: ${size / 2}px;
-      width: ${size / 2}px;
+      height: ${(size / 4) * 3}px;
+      width: ${(size / 4) * 3}px;
     `}
   position: absolute;
   background: ${Colors.white};
