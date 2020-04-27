@@ -195,6 +195,14 @@ export default function IndexPage() {
 }
 
 const Wrapper = styled.div`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   padding: 48px 48px;
   display: grid;
   grid-template-columns: repeat(18, 1fr);
@@ -216,6 +224,7 @@ const BackgroundWrapper = styled.div`
   grid-template-columns: repeat(25, 1fr);
   grid-template-rows: repeat(12, 1fr);
   transform: rotate(-3deg);
+  z-index: -1;
 `;
 
 const backAnimation = keyframes`
