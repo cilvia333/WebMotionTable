@@ -3,17 +3,13 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Colors, Fonts } from '../assets/styles/constants';
 
-type Props = {
-  siteTitle: string;
-};
-
-export default function Header({ siteTitle = `` }: Props) {
+export default function Header() {
   return (
     <CustomHeader>
       <Wrapper>
         <TitleWrapper>
           <TitleLink to="/">
-            <Title>{siteTitle}</Title>
+            <Title>Web Motion Periodic Table</Title>
           </TitleLink>
           <TitleText>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
@@ -39,14 +35,14 @@ export default function Header({ siteTitle = `` }: Props) {
 }
 
 const CustomHeader = styled.header`
-  margin-bottom: 16px;
+  height: 65px;
   background-color: ${Colors.white};
   z-index: 4;
 `;
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;

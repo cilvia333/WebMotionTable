@@ -5,6 +5,7 @@ import { css, keyframes } from '@emotion/core';
 import styled from '@emotion/styled';
 import Card from '../components/card';
 import Layout from '../components/layout';
+import Logo from '../components/logo';
 import SEO from '../components/seo';
 import { Colors, Fonts } from '../assets/styles/constants';
 import { Orbit } from '../components/contents/orbit';
@@ -18,6 +19,7 @@ import { Rotate } from '../components/contents/rotate';
 import { RoughEdge } from '../components/contents/roughEdge';
 import { Scale } from '../components/contents/scale';
 import { TrimLine } from '../components/contents/trimLine';
+import { TrimPie } from '../components/contents/trimPie';
 import { TurbulentDisplace } from '../components/contents/turbulentDisplace';
 
 type CardItem = {
@@ -125,7 +127,7 @@ const mock: CardItem[][] = [
     { name: 'Trim Line', link: 'trimLine', component: <TrimLine /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
-    { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
+    { name: 'Trim Pie', link: 'trimPie', component: <TrimPie /> },
     { name: 'Line Weight', link: 'lineWeight', component: <LineWeight /> },
   ],
   [
@@ -166,39 +168,56 @@ export default function IndexPage() {
   return (
     <Layout>
       <SEO title="WebMotionTable" />
-      <BackgroundWrapper>
-        {backgroundTriangles.slice().reverse()}
-      </BackgroundWrapper>
       <Wrapper>
-        {mock.map((items, i) => (
-          <>
-            <CardWrapper key={`group${i}`}>
+        <BackgroundWrapper>
+          {backgroundTriangles.slice().reverse()}
+        </BackgroundWrapper>
+        <TableWrapper>
+          <StyledLogo />
+          {mock.map((items, i) => (
+            <>
               {items
                 .slice()
                 .reverse()
                 .map((item, j) => (
-                  <Card
+                  <StyledCard
                     name={item.name}
                     link={item.link}
                     key={`item${i}_${j}`}
                     size={logoSize}
                     logo={item.component}
+                    row={j}
+                    col={i}
                   />
                 ))}
-            </CardWrapper>
-            <GroupButton>{`Group${i + 1}`}</GroupButton>
-          </>
-        ))}
+              <GroupButton>{`Group${i + 1}`}</GroupButton>
+            </>
+          ))}
+        </TableWrapper>
       </Wrapper>
     </Layout>
   );
 }
 
 const Wrapper = styled.div`
-  padding: 48px 48px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+`;
+
+const TableWrapper = styled.div`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 80px 48px 120px;
   display: grid;
   grid-template-columns: repeat(18, 1fr);
-  grid-template-rows: 1fr 10px;
+  grid-template-rows: repeat(6, 1fr) 10px;
   height: 100%;
   gap: 10px;
 `;
@@ -215,7 +234,9 @@ const BackgroundWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(25, 1fr);
   grid-template-rows: repeat(12, 1fr);
+  align-content: end;
   transform: rotate(-3deg);
+  z-index: -1;
 `;
 
 const backAnimation = keyframes`
@@ -284,6 +305,20 @@ const GroupButton = styled.div`
   ${Fonts.h3}
   color: ${Colors.gray};
   text-align: center;
-  grid-row: 2/3;
+  grid-row: 7/8;
   cursor: pointer;
+`;
+
+const StyledLogo = styled(Logo)`
+  grid-row: 1/3;
+  grid-column: 4/13;
+  align-self: center;
+  justify-self: center;
+`;
+
+const StyledCard = styled(Card)<{ row: number; col: number }>`
+  ${({ row, col }) => css`
+    grid-row: ${6 - row} / ${7 - row};
+    grid-column: ${col + 1} / ${col + 2};
+  `}
 `;
