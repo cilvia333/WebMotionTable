@@ -21,9 +21,10 @@ type Props = {
   link: string;
   size: number;
   logo: JSX.Element;
+  className?: string;
 };
 
-export default function Card({ name, link, size, logo }: Props) {
+export default function Card({ name, link, size, logo, className }: Props) {
   const [isMouseOver, setIsMouseOver] = useState(false);
   const [circle, setCircle] = useState<animType>();
   const logoWithProps = React.cloneElement(logo, {
@@ -104,26 +105,24 @@ export default function Card({ name, link, size, logo }: Props) {
   }, [elW, elH]);
 
   return (
-    <>
-      <CardLink to={`/content/${link}/`}>
-        <Wrapper
-          onMouseEnter={e => {
-            expandCircle(checkRange(elX, elW), checkRange(elY, elH));
-            setIsMouseOver(true);
-          }}
-          onMouseLeave={e => {
-            closeCircle(checkRange(elX, elW), checkRange(elY, elH));
-            setIsMouseOver(false);
-          }}
-        >
-          <Canvas ref={canvasRef} />
-          <ContentWrapper ref={cardRef}>
-            {logoWithProps}
-            <Title>{name}</Title>
-          </ContentWrapper>
-        </Wrapper>
-      </CardLink>
-    </>
+    <CardLink to={`/content/${link}/`} className={className}>
+      <Wrapper
+        onMouseEnter={e => {
+          expandCircle(checkRange(elX, elW), checkRange(elY, elH));
+          setIsMouseOver(true);
+        }}
+        onMouseLeave={e => {
+          closeCircle(checkRange(elX, elW), checkRange(elY, elH));
+          setIsMouseOver(false);
+        }}
+      >
+        <Canvas ref={canvasRef} />
+        <ContentWrapper ref={cardRef}>
+          {logoWithProps}
+          <Title>{name}</Title>
+        </ContentWrapper>
+      </Wrapper>
+    </CardLink>
   );
 }
 

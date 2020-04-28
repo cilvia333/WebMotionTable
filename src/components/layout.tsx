@@ -47,21 +47,14 @@ export default function Layout({ children }: Props) {
   return (
     <>
       <Global styles={globalStyle} />
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <HeaderMargin />
+      <Header />
       <Main>{children}</Main>
-      <Footer>©2020, Cilvia333 / All rights Reserved.</Footer>
+      <Footer />
     </>
   );
 }
 
-const HeaderMargin = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-`;
-
 const Main = styled.main`
-  height: calc(100vh - 130px);
-  position: relative;
+  height: calc(100vh - 65px);
   overflow: hidden;
 `;
